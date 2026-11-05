@@ -3,20 +3,19 @@ import mi_negocio
 import calculos
 import pdf_presupuesto
 
-# 1. Configuración de la página
 st.set_page_config(
     page_title=f"Presupuestos | {mi_negocio.NOMBRE_NEGOCIO}",
     page_icon="🧾",
     layout="centered"
 )
 
-# 2. Títulos y encabezado visibles
+s
 st.title(f"🧾 {mi_negocio.NOMBRE_NEGOCIO}")
 st.caption(f"Calculadora de presupuestos · {mi_negocio.RUBRO}")
 st.write("Elegí hasta tres productos, ingresá las cantidades y seleccioná la forma de pago.")
 
-# 3. Entrada de datos con widgets permitidos
-cliente = st.text_input("Nombre del cliente", placeholder="Ej: Juli")
+
+cliente = st.text_input("Nombre del cliente")
 
 RENGLONES = 3
 nombres = []
@@ -53,11 +52,11 @@ forma_pago = st.radio(
 
 st.divider()
 
-# 4. Lógica de validación, cálculos y visualización de resultados
+
 if not nombres:
     st.warning("Elegí al menos un producto con cantidad mayor que 0 para generar el presupuesto.")
 else:
-    # Llamada a las funciones puras de calculos.py
+   
     subtotal, descuento, iva, total = calculos.calcular_presupuesto(
         cantidades, precios_unitarios, forma_pago, mi_negocio.EFECTIVO
     )
@@ -71,7 +70,7 @@ else:
     if not cliente.strip():
         st.warning("Ingresá el nombre del cliente para habilitar la descarga del PDF.")
     else:
-        # Generación y descarga del PDF utilizando la estructura vista en clases
+      
         pdf_bytes = pdf_presupuesto.generar_pdf(
             nombre_negocio=mi_negocio.NOMBRE_NEGOCIO,
             rubro=mi_negocio.RUBRO,
