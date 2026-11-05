@@ -5,7 +5,7 @@ import pdf_presupuesto
 
 st.set_page_config(
     page_title=f"Presupuestos | {mi_negocio.NOMBRE_NEGOCIO}",
-    page_icon="🧾",
+
     layout="centered"
 )
 
