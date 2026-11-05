@@ -9,7 +9,7 @@ st.set_page_config(
     layout="centered"
 )
 
-s
+
 st.title(f"🧾 {mi_negocio.NOMBRE_NEGOCIO}")
 st.caption(f"Calculadora de presupuestos · {mi_negocio.RUBRO}")
 st.write("Elegí hasta tres productos, ingresá las cantidades y seleccioná la forma de pago.")
